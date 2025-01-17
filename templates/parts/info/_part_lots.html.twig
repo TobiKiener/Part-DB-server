@@ -102,7 +102,7 @@
                             <i class="fa-solid fa-lightbulb fa-fw"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <span class="text-muted dropdown-item-text" ><i class="fas fa-lightbulb fa-fw"></i> <b>{% trans %}id.label{% endtrans %}:</b> {{ lot.iD }} <b><a href="http://10.11.12.13/pickbylight/id{{ lot.iD }}">PickByLight</a></b></span>
+                            <span class="text-muted dropdown-item-text" ><i class="fas fa-lightbulb fa-fw"></i> <b>{% trans %}id.label{% endtrans %}:</b> {{ lot.iD }} <b><a href="{{ pickbylight_endpoint }}?storagelocation={{ lot.iD }}">PickByLight</a></b></span>
                             <span class="text-muted dropdown-item-text" ><i class="fas fa-history fa-fw"></i> <b>{% trans %}lastModified{% endtrans %}:</b> {{ helper.entity_last_modified(lot) }}</span>
                             <span class="text-muted dropdown-item-text" ><i class="fas fa-calendar-plus fa-fw"></i> <b>{% trans %}createdAt{% endtrans %}:</b> {{ helper.entity_created_at(lot) }}</span>
                             {% if lot.comment is not empty %}
